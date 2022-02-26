@@ -1,14 +1,14 @@
 package main
 
-import (
+import(
+	"log"
+	"net/http"
 	"github.com/gorilla/mux"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"github.com/winsongr/go-bookstore/pkg/routes"
-	"log"
-	"net/http"
 )
 
-func main() {
+func main(){
 	r := mux.NewRouter()
 	routes.RegisterBookStoreRoutes(r)
 	http.Handle("/", r)
